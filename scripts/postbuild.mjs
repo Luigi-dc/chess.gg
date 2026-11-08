@@ -34,3 +34,12 @@ function clean(dir) {
 }
 
 clean(new URL('../dist', import.meta.url).pathname)
+
+// Make the built configuration self-report, and never deploy the example id.
+const config = readFileSync(new URL('../wrangler.jsonc', import.meta.url), 'utf8')
+const databaseId = /"database_id"\s*:\s*"([^"]+)"/.exec(config)?.[1]
+console.log(`D1 binding: ${databaseId ?? 'missing'}`)
+if (!databaseId || /^0{8}-0{4}-/.test(databaseId))
+  throw new Error(
+    'wrangler.jsonc still has the example D1 database_id; replace it before deploying.',
+  )
