@@ -6,6 +6,6 @@
   "assets": { "binding": "ASSETS", "not_found_handling": "single-page-application", "run_worker_first": true },
   "d1_databases": [{ "binding": "DB", "database_name": "chess", "database_id": "c00133e9-85ff-49b4-b507-5c718c8ec2d7" }],
   "durable_objects": { "bindings": [{ "name": "REALTIME", "class_name": "FreebuffRealtime", "script_name": "freebuff-sites-realtime-local" }] },
-  "vars": { "APP_ORIGIN": "http://127.0.0.1:5184" },
+  "vars": { "APP_ORIGIN": "https://chess-gg.luigi-carri.workers.dev" },
   "observability": { "enabled": true }
 }

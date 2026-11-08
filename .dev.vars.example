@@ -1,0 +1,4 @@
+# Local-only overrides for `wrangler dev` / `vite dev`. Copy to `.dev.vars`.
+# wrangler.jsonc holds the deployed origin; this keeps the local preview on
+# the loopback address so same-origin checks and cookies work during dev.
+APP_ORIGIN=http://127.0.0.1:5184
