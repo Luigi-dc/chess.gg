@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "chess",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "assets": { "binding": "ASSETS", "not_found_handling": "single-page-application", "run_worker_first": true },
+  "d1_databases": [{ "binding": "DB", "database_name": "chess", "database_id": "00000000-0000-0000-0000-000000000000" }],
+  "durable_objects": { "bindings": [{ "name": "REALTIME", "class_name": "FreebuffRealtime", "script_name": "freebuff-sites-realtime-local" }] },
+  "vars": { "APP_ORIGIN": "http://127.0.0.1:5184" },
+  "observability": { "enabled": true }
+}
